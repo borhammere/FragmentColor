@@ -1,6 +1,8 @@
-package com.example.fragmentcolor
+package com.example.fragmentcolor.data
 
 import android.graphics.Color
+import com.example.fragmentcolor.domain.ColorEntity
+import com.example.fragmentcolor.domain.ColorsRepo
 import java.util.*
 
 class InMemoryColorRepoImpl : ColorsRepo {
@@ -12,11 +14,7 @@ class InMemoryColorRepoImpl : ColorsRepo {
             ColorEntity(generateId(), "Yellow", Color.YELLOW),
             ColorEntity(generateId(), "Black", Color.BLACK),
             ColorEntity(generateId(), "Cyan", Color.CYAN),
-            ColorEntity(generateId(), "Magenta", Color.MAGENTA),
-            ColorEntity(generateId(), "LGray", Color.LTGRAY),
-            ColorEntity(generateId(), "DGray", Color.DKGRAY),
-            ColorEntity(generateId(), "Gray", Color.GRAY),
-            ColorEntity(generateId(), "Tr", Color.TRANSPARENT),
+            ColorEntity(generateId(), "Magenta", Color.MAGENTA)
         )
     }
 

@@ -1,9 +1,11 @@
-package com.example.fragmentcolor
+package com.example.fragmentcolor.ui.colorslist
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fragmentcolor.domain.ColorEntity
+import com.example.fragmentcolor.R
 import com.example.fragmentcolor.databinding.ItemColorBinding
 
 
@@ -19,8 +21,11 @@ class ColorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         }
     }
 
-    fun bind(item: ColorEntity) {
+    fun bind(item: ColorEntity, listener: (ColorEntity) -> Unit) {
         binding.colorNameTextView.text = item.name
         binding.root.setBackgroundColor(item.color)
+        binding.root.setOnClickListener {
+            listener.invoke(item)
+        }
     }
 }
